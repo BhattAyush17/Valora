@@ -55,7 +55,7 @@ Valora is an intelligent, data-driven house price prediction and property analys
 **Get started:** Upload your property data and unlock the power of smart, transparent price prediction and market insights — all in one place, with Valora!
 """)
 
-# ====== MODEL SELECTION DROPDOWN WITH INFO ======
+# ====== Select Model Based on the requirement and prediction , Stated with the use of every model ======
 st.sidebar.header("🔎 Model Selection")
 model_name = st.sidebar.selectbox(
     "Choose Prediction Model:",
@@ -129,7 +129,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=test_size/100, random_state=int(random_state)
 )
 
-# === Choose Model Based on Dropdown ===
+# Choose Model Based on Dropdown 
 if model_name == "Linear Regression":
     model = LinearRegression()
 elif model_name == "Random Forest":
@@ -139,7 +139,7 @@ elif model_name == "Gradient Boosting":
 elif model_name == "K-Nearest Neighbors":
     model = KNeighborsRegressor(n_neighbors=5)
 
-# === Fit and Predict as usual ===
+# Fit and Predict as usual 
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 full_pred = model.predict(X)
